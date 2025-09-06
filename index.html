@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BanaNoVa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-primary': '#FF6B6B',
+              'brand-secondary': '#4ECDC4',
+              'brand-accent': '#45B7D1',
+              'brand-fun': '#F9CA24',
+              'dark-bg': '#0F0F23',
+              'dark-surface': '#1A1A2E',
+              'dark-border': '#16213E',
+              'dark-text-primary': '#FFFFFF',
+              'dark-text-secondary': '#A0A0A0',
+            },
+            keyframes: {
+                'fade-in': {
+                    '0%': { opacity: 0, transform: 'translateY(-10px)' },
+                    '100%': { opacity: 1, transform: 'translateY(0)' },
+                },
+                'bounce-in': {
+                    '0%': { opacity: 0, transform: 'scale(0.3)' },
+                    '50%': { opacity: 1, transform: 'scale(1.05)' },
+                    '70%': { transform: 'scale(0.9)' },
+                    '100%': { opacity: 1, transform: 'scale(1)' },
+                },
+                'glow': {
+                    '0%, 100%': { boxShadow: '0 0 5px rgba(255, 107, 107, 0.5)' },
+                    '50%': { boxShadow: '0 0 20px rgba(255, 107, 107, 0.8)' },
+                },
+            },
+            animation: {
+                'fade-in': 'fade-in 0.3s ease-out',
+                'bounce-in': 'bounce-in 0.6s ease-out',
+                'glow': 'glow 2s ease-in-out infinite',
+            },
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.17.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-dark-bg text-dark-text-primary">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
