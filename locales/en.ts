@@ -34,7 +34,28 @@ export const en = {
         AddObject: "Add Object",
         ChangeBackground: "Change Background",
         ChangeOutfit: "Change Outfit",
-        CombineImages: "Combine Images"
+        CombineImages: "Combine Images",
+        // Trang điểm ảo
+        NaturalMakeup: "Natural Makeup",
+        GlamourMakeup: "Glamour Makeup",
+        // Kiểu tóc & màu tóc
+        WavyHair: "Wavy Hair Style",
+        BobHaircut: "Bob Haircut",
+        // Phụ kiện & thời trang
+        AddAccessories: "Add Accessories",
+        WeddingDress: "Wedding Dress",
+        // Phong cách hình ảnh
+        AnimeStyle: "Anime Style",
+        CinematicFilter: "Cinematic Filter",
+        // Body & dáng chụp
+        ConfidentPose: "Confident Pose",
+        ModelPose: "Model Pose",
+        // Ảnh nghệ thuật
+        NeonEffects: "Neon Effects",
+        WatercolorStyle: "Watercolor Style",
+        // Chế độ nam - nữ
+        MaleStyle: "Male Style",
+        AoDaiStyle: "Ao Dai Style"
     },
     exportTitle: "Export Options",
     exportFormat: "Format",

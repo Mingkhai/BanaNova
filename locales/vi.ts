@@ -34,7 +34,28 @@ export const vi = {
         AddObject: "Thêm vật thể",
         ChangeBackground: "Đổi nền",
         ChangeOutfit: "Đổi trang phục",
-        CombineImages: "Kết hợp ảnh"
+        CombineImages: "Kết hợp ảnh",
+        // Trang điểm ảo
+        NaturalMakeup: "Trang điểm tự nhiên",
+        GlamourMakeup: "Trang điểm quyến rũ",
+        // Kiểu tóc & màu tóc
+        WavyHair: "Tóc xoăn sóng",
+        BobHaircut: "Tóc Bob",
+        // Phụ kiện & thời trang
+        AddAccessories: "Thêm phụ kiện",
+        WeddingDress: "Váy cưới",
+        // Phong cách hình ảnh
+        AnimeStyle: "Phong cách Anime",
+        CinematicFilter: "Bộ lọc điện ảnh",
+        // Body & dáng chụp
+        ConfidentPose: "Tư thế tự tin",
+        ModelPose: "Tư thế người mẫu",
+        // Ảnh nghệ thuật
+        NeonEffects: "Hiệu ứng Neon",
+        WatercolorStyle: "Phong cách màu nước",
+        // Chế độ nam - nữ
+        MaleStyle: "Phong cách nam",
+        AoDaiStyle: "Áo dài Việt Nam"
     },
     exportTitle: "Tùy chọn xuất file",
     exportFormat: "Định dạng",

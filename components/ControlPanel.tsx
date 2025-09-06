@@ -52,7 +52,7 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
                 <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
                     🎨 {t('controlPanelModeTitle')}
                 </h2>
-                <div className={`grid grid-cols-2 gap-2 ${editModes.length > 4 ? 'md:grid-cols-2' : 'grid-cols-2'}`}>
+                <div className={`grid gap-2 ${editModes.length > 10 ? 'grid-cols-2 md:grid-cols-3' : editModes.length > 6 ? 'grid-cols-2 md:grid-cols-2' : 'grid-cols-2'}`}>
                     {editModes.map((mode) => (
                         <EditModeButton
                             key={mode}

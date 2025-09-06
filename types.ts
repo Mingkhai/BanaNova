@@ -5,6 +5,27 @@ export enum EditMode {
     ChangeBackground = "ChangeBackground",
     ChangeOutfit = "ChangeOutfit",
     CombineImages = "CombineImages",
+    // Trang điểm ảo
+    NaturalMakeup = "NaturalMakeup",
+    GlamourMakeup = "GlamourMakeup",
+    // Kiểu tóc & màu tóc
+    WavyHair = "WavyHair",
+    BobHaircut = "BobHaircut",
+    // Phụ kiện & thời trang
+    AddAccessories = "AddAccessories",
+    WeddingDress = "WeddingDress",
+    // Phong cách hình ảnh
+    AnimeStyle = "AnimeStyle",
+    CinematicFilter = "CinematicFilter",
+    // Body & dáng chụp
+    ConfidentPose = "ConfidentPose",
+    ModelPose = "ModelPose",
+    // Ảnh nghệ thuật
+    NeonEffects = "NeonEffects",
+    WatercolorStyle = "WatercolorStyle",
+    // Chế độ nam - nữ
+    MaleStyle = "MaleStyle",
+    AoDaiStyle = "AoDaiStyle",
 }
 
 export interface GeminiPart {
