@@ -49,40 +49,40 @@ export const MultiImageUploader: React.FC<MultiImageUploaderProps> = ({
     };
     
     return (
-        <div className="bg-gradient-to-br from-dark-surface to-dark-bg rounded-2xl p-8 border border-dark-border shadow-2xl">
-            <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
+        <div className="bg-gradient-to-br from-dark-surface to-dark-bg rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 border border-dark-border shadow-2xl">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-white flex items-center gap-2">
                 📸 {t('uploaderTitle')}
             </h2>
             <div
-                className={`relative group border-4 border-dashed rounded-2xl p-6 text-center transition-all duration-300 min-h-[500px] flex items-center justify-center ${isDragging ? 'border-brand-primary bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 scale-105' : 'border-dark-border hover:border-brand-accent hover:bg-gradient-to-br hover:from-brand-accent/10 hover:to-brand-fun/10'}`}
+                className={`relative group border-4 border-dashed rounded-xl md:rounded-2xl p-4 md:p-6 text-center transition-all duration-300 min-h-[300px] md:min-h-[400px] lg:min-h-[500px] flex items-center justify-center ${isDragging ? 'border-brand-primary bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 scale-105' : 'border-dark-border hover:border-brand-accent hover:bg-gradient-to-br hover:from-brand-accent/10 hover:to-brand-fun/10'}`}
                 onDrop={handleDrop}
                 onDragOver={(e) => handleDragEvents(e, true)}
                 onDragEnter={(e) => handleDragEvents(e, true)}
                 onDragLeave={(e) => handleDragEvents(e, false)}
             >
-                <div className="w-full h-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="w-full h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4">
                     {imageUrls.map((url, index) => (
                         <div key={index} className="relative group aspect-square">
                             <img src={url} alt={`upload-preview-${index}`} className="w-full h-full object-cover rounded-md" />
                             {index === 0 && imageUrls.length > 1 && (
-                                <div className="absolute top-1 left-1 bg-brand-primary text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-md">
+                                <div className="absolute top-1 left-1 bg-brand-primary text-white text-[8px] md:text-[10px] font-bold px-1 md:px-2 py-0.5 rounded shadow-md">
                                     {t('uploaderBaseImage')}
                                 </div>
                             )}
                             <button
                                 onClick={() => onImageRemove(index)}
-                                className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full p-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                                className="absolute -top-1 md:-top-2 -right-1 md:-right-2 bg-red-600 text-white rounded-full p-1 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity touch-manipulation"
                                 aria-label={`Remove image ${index + 1}`}
                             >
-                                <CloseIcon className="w-4 h-4" />
+                                <CloseIcon className="w-3 md:w-4 h-3 md:h-4" />
                             </button>
                         </div>
                     ))}
                     
-                    <label htmlFor="file-upload" className={`aspect-square flex flex-col items-center justify-center space-y-2 text-dark-text-secondary border-2 border-dashed rounded-md cursor-pointer transition-colors ${isDragging ? 'border-brand-primary' : 'border-dark-border hover:border-brand-secondary hover:bg-dark-bg'}`}>
-                        <UploadIcon className="w-10 h-10" />
-                        <p className="font-bold text-lg text-white">{t('uploaderPrompt')}</p>
-                        <p className="text-sm text-dark-text-secondary mt-2">{t('uploaderOr')}</p>
+                    <label htmlFor="file-upload" className={`aspect-square flex flex-col items-center justify-center space-y-1 md:space-y-2 text-dark-text-secondary border-2 border-dashed rounded-md cursor-pointer transition-colors ${isDragging ? 'border-brand-primary' : 'border-dark-border hover:border-brand-secondary hover:bg-dark-bg'}`}>
+                        <UploadIcon className="w-6 md:w-8 lg:w-10 h-6 md:h-8 lg:h-10" />
+                        <p className="font-bold text-sm md:text-base lg:text-lg text-white text-center px-1">{t('uploaderPrompt')}</p>
+                        <p className="text-xs md:text-sm text-dark-text-secondary mt-1 md:mt-2 text-center px-1">{t('uploaderOr')}</p>
                     </label>
                     <input
                         type="file"

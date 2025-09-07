@@ -93,10 +93,10 @@ const App: React.FC = () => {
     return (
         <div className="min-h-screen bg-dark-bg text-dark-text-primary font-sans">
             <Header />
-            <main className="container mx-auto p-6 md:p-12">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <main className="container mx-auto p-4 md:p-6 lg:p-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
                     {/* Left Column: Image Editor and Result */}
-                    <div className="lg:col-span-2 space-y-8">
+                    <div className="lg:col-span-2 space-y-6 md:space-y-8">
                         <MultiImageUploader 
                             onImageUpload={handleImageUpload} 
                             onImageRemove={handleRemoveImage}
@@ -119,9 +119,9 @@ const App: React.FC = () => {
                     </div>
                 </div>
             </main>
-            <footer className="bg-dark-surface/50 border-t border-dark-border py-6 mt-12">
+            <footer className="bg-dark-surface/50 border-t border-dark-border py-4 md:py-6 mt-8 md:mt-12">
                 <div className="container mx-auto px-4 md:px-8 text-center">
-                    <p className="text-dark-text-secondary text-sm">
+                    <p className="text-dark-text-secondary text-xs md:text-sm">
                         Design by <span className="text-brand-primary font-semibold">Knice</span> 2025
                     </p>
                 </div>

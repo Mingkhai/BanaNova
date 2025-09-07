@@ -23,7 +23,7 @@ const EditModeButton: React.FC<{
     return (
         <button
             onClick={() => onClick(mode)}
-            className={`px-4 py-3 text-sm font-medium rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg ${
+            className={`px-2 md:px-4 py-2 md:py-3 text-xs md:text-sm font-medium rounded-lg md:rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg text-center ${
                 isActive
                     ? 'bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-xl animate-bounce-in'
                     : 'bg-dark-surface text-dark-text-secondary hover:bg-gradient-to-r hover:from-brand-accent hover:to-brand-fun hover:text-white border border-dark-border'
@@ -47,12 +47,12 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
     const editModes = Object.values(EditMode);
 
     return (
-        <div className="bg-gradient-to-br from-dark-surface to-dark-bg rounded-2xl p-8 border border-dark-border shadow-2xl space-y-8 sticky top-24 backdrop-blur-sm">
+        <div className="bg-gradient-to-br from-dark-surface to-dark-bg rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 border border-dark-border shadow-2xl space-y-6 md:space-y-8 lg:sticky lg:top-24 backdrop-blur-sm">
             <div>
-                <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
+                <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-white flex items-center gap-2">
                     🎨 {t('controlPanelModeTitle')}
                 </h2>
-                <div className={`grid gap-2 ${editModes.length > 10 ? 'grid-cols-2 md:grid-cols-3' : editModes.length > 6 ? 'grid-cols-2 md:grid-cols-2' : 'grid-cols-2'}`}>
+                <div className={`grid gap-2 ${editModes.length > 10 ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3' : editModes.length > 6 ? 'grid-cols-2 md:grid-cols-2' : 'grid-cols-2'}`}>
                     {editModes.map((mode) => (
                         <EditModeButton
                             key={mode}
@@ -66,14 +66,14 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
             </div>
 
             <div>
-                <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
+                <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-white flex items-center gap-2">
                     💬 {t('controlPanelPromptTitle')}
                 </h2>
                 <textarea
                     value={prompt}
                     onChange={(e) => onPromptChange(e.target.value)}
-                    rows={6}
-                    className="w-full bg-dark-bg border-2 border-dark-border rounded-xl p-4 text-sm focus:ring-4 focus:ring-brand-primary/30 focus:border-brand-primary transition-all duration-300 placeholder-dark-text-secondary"
+                    rows={4}
+                    className="w-full bg-dark-bg border-2 border-dark-border rounded-lg md:rounded-xl p-3 md:p-4 text-xs md:text-sm focus:ring-4 focus:ring-brand-primary/30 focus:border-brand-primary transition-all duration-300 placeholder-dark-text-secondary resize-none"
                     placeholder={t('controlPanelPlaceholder')}
                 />
             </div>
@@ -81,7 +81,7 @@ export const ControlPanel: React.FC<ControlPanelProps> = ({
             <button
                 onClick={onGenerate}
                 disabled={isLoading || isGenerateDisabled}
-                className="w-full flex items-center justify-center bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white font-bold py-4 px-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-lg animate-glow"
+                className="w-full flex items-center justify-center bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent text-white font-bold py-3 md:py-4 px-4 md:px-6 rounded-xl md:rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-lg animate-glow text-sm md:text-base"
             >
                 {isLoading ? (
                     <>

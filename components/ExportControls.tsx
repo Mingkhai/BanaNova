@@ -18,7 +18,7 @@ const OptionButton: React.FC<{
 }> = ({ label, onClick, isActive }) => (
     <button
         onClick={onClick}
-        className={`px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${
+        className={`px-2 md:px-3 py-1 md:py-1.5 text-xs font-semibold rounded-md transition-colors ${
             isActive ? 'bg-brand-primary text-white' : 'bg-dark-border text-dark-text-secondary hover:bg-slate-600'
         }`}
     >
@@ -45,13 +45,13 @@ export const ExportControls: React.FC<ExportControlsProps> = ({
     }
 
     return (
-        <div className="border-t border-dark-border pt-4 mt-4 space-y-4">
-            <h3 className="text-lg font-semibold text-center text-dark-text-primary">{t('exportTitle')}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="border-t border-dark-border pt-3 md:pt-4 mt-3 md:mt-4 space-y-3 md:space-y-4">
+            <h3 className="text-base md:text-lg font-semibold text-center text-dark-text-primary">{t('exportTitle')}</h3>
+            <div className="grid grid-cols-1 gap-3 md:gap-4">
                 {/* Format Controls */}
                 <div className="space-y-2">
-                    <label className="block text-sm font-medium text-dark-text-secondary">{t('exportFormat')}</label>
-                    <div className="flex items-center space-x-2 bg-dark-bg p-1 rounded-lg">
+                    <label className="block text-xs md:text-sm font-medium text-dark-text-secondary">{t('exportFormat')}</label>
+                    <div className="flex items-center space-x-1 md:space-x-2 bg-dark-bg p-1 rounded-lg">
                         {formats.map(f => (
                              <OptionButton
                                 key={f}
@@ -64,8 +64,8 @@ export const ExportControls: React.FC<ExportControlsProps> = ({
                 </div>
                 {/* Aspect Ratio Controls */}
                 <div className="space-y-2">
-                     <label className="block text-sm font-medium text-dark-text-secondary">{t('exportAspectRatio')}</label>
-                     <div className="flex flex-wrap gap-2 bg-dark-bg p-1 rounded-lg">
+                     <label className="block text-xs md:text-sm font-medium text-dark-text-secondary">{t('exportAspectRatio')}</label>
+                     <div className="flex flex-wrap gap-1 md:gap-2 bg-dark-bg p-1 rounded-lg">
                         {aspectRatios.map(ar => (
                              <OptionButton
                                 key={ar}
@@ -79,7 +79,7 @@ export const ExportControls: React.FC<ExportControlsProps> = ({
             </div>
             <button
                 onClick={onDownload}
-                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
+                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold py-2 md:py-3 px-3 md:px-4 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300 text-sm md:text-base"
             >
                 {t('downloadButton')}
             </button>

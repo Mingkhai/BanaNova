@@ -97,39 +97,39 @@ export const ResultView: React.FC<ResultViewProps> = ({ resultParts, isLoading, 
 
 
     return (
-        <div className="bg-gradient-to-br from-dark-surface to-dark-bg rounded-2xl p-8 border border-dark-border shadow-2xl min-h-[400px] flex flex-col justify-center items-center">
-            <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2 self-start">
+        <div className="bg-gradient-to-br from-dark-surface to-dark-bg rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 border border-dark-border shadow-2xl min-h-[300px] md:min-h-[400px] flex flex-col justify-center items-center">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold mb-4 md:mb-6 text-white flex items-center gap-2 self-start">
                 ✨ {t('resultTitle')}
             </h2>
             <div className="w-full flex-grow flex flex-col items-center justify-center">
                 {isLoading && <Loader />}
 
                 {error && !isLoading && (
-                    <div className="text-center text-red-400">
-                        <p className="font-semibold">{t('resultErrorTitle')}</p>
-                        <p className="text-sm">{error}</p>
+                    <div className="text-center text-red-400 px-4">
+                        <p className="font-semibold text-sm md:text-base">{t('resultErrorTitle')}</p>
+                        <p className="text-xs md:text-sm mt-2">{error}</p>
                     </div>
                 )}
                 
                 {!isLoading && !error && !resultParts && (
-                    <div className="text-center text-dark-text-secondary">
-                        <p>{t('resultPlaceholder')}</p>
-                        <p className="text-sm">{t('resultPlaceholderSubtext')}</p>
+                    <div className="text-center text-dark-text-secondary px-4">
+                        <p className="text-sm md:text-base">{t('resultPlaceholder')}</p>
+                        <p className="text-xs md:text-sm mt-2">{t('resultPlaceholderSubtext')}</p>
                     </div>
                 )}
                 
                 {!isLoading && resultParts && (
-                     <div className="space-y-4 w-full">
+                     <div className="space-y-3 md:space-y-4 w-full">
                         {imageUrl && (
                             <img 
                                 src={imageUrl} 
                                 alt="Generated result" 
-                                className="mx-auto max-h-96 rounded-md object-contain" 
+                                className="mx-auto max-h-64 md:max-h-80 lg:max-h-96 rounded-md object-contain w-full" 
                             />
                         )}
                         {textParts && textParts.length > 0 && (
-                             <div className="bg-dark-bg p-4 rounded-md border border-dark-border">
-                                <p className="text-sm text-dark-text-secondary">{textParts.join('\n')}</p>
+                             <div className="bg-dark-bg p-3 md:p-4 rounded-md border border-dark-border">
+                                <p className="text-xs md:text-sm text-dark-text-secondary">{textParts.join('\n')}</p>
                             </div>
                         )}
                         {imageUrl && (

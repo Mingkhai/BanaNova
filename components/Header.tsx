@@ -2,6 +2,7 @@
 import React from 'react';
 import { useApiKey } from '../contexts/ApiKeyContext';
 import { useLocalization, Locale } from '../contexts/LocalizationContext';
+import logoImg from '/logo.png';
 
 const SparkleIcon: React.FC<{ className?: string }> = ({ className }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -18,10 +19,10 @@ const LanguageSwitcher: React.FC = () => {
     };
 
     return (
-        <div className="flex items-center space-x-2 bg-dark-surface/80 p-1 rounded-full border border-dark-border backdrop-blur-sm">
+        <div className="flex items-center space-x-1 md:space-x-2 bg-dark-surface/80 p-1 rounded-full border border-dark-border backdrop-blur-sm">
             <button
                 onClick={() => switchLanguage('en')}
-                className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 transform hover:scale-105 ${
+                className={`px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-semibold rounded-full transition-all duration-300 transform hover:scale-105 ${
                     locale === 'en' 
                         ? 'bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg' 
                         : 'text-dark-text-secondary hover:bg-dark-surface hover:text-white'
@@ -30,10 +31,10 @@ const LanguageSwitcher: React.FC = () => {
             >
                 🇺🇸 EN
             </button>
-             <div className="w-px h-6 bg-dark-border"></div>
+             <div className="w-px h-4 md:h-6 bg-dark-border"></div>
             <button
                 onClick={() => switchLanguage('vi')}
-                className={`px-4 py-2 text-sm font-semibold rounded-full transition-all duration-300 transform hover:scale-105 ${
+                className={`px-2 md:px-4 py-1 md:py-2 text-xs md:text-sm font-semibold rounded-full transition-all duration-300 transform hover:scale-105 ${
                     locale === 'vi' 
                         ? 'bg-gradient-to-r from-brand-primary to-brand-secondary text-white shadow-lg' 
                         : 'text-dark-text-secondary hover:bg-dark-surface hover:text-white'
@@ -54,26 +55,55 @@ export const Header: React.FC = () => {
     };
     return (
         <header className="bg-gradient-to-r from-yellow-400 via-pink-400 to-blue-500 backdrop-blur-lg border-b border-dark-border sticky top-0 z-10 shadow-lg">
-            <div className="container mx-auto px-4 md:px-8 py-6 flex items-center justify-between">
-                 <div className="flex items-center gap-4">
-                    <div className="relative">
-                        <img src="/logo.png" alt="BanaNoVa Logo" className="w-16 h-16 rounded-xl shadow-lg bg-white/80 p-2" />
+            <div className="container mx-auto px-4 md:px-8 py-4 md:py-6">
+                {/* Mobile Layout */}
+                <div className="flex flex-col space-y-3 md:hidden">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <div className="relative">
+                                <img src={logoImg} alt="BanaNoVa Logo" className="w-12 h-12 md:w-16 md:h-16 rounded-xl shadow-lg bg-white/80 p-2" />
+                            </div>
+                            <div>
+                                <h1 className="text-xl md:text-3xl font-bold text-white tracking-tight">
+                                    BanaNoVa
+                                </h1>
+                                <p className="text-xs md:text-sm text-dark-text-secondary">{t('headerSubtitle')}</p>
+                            </div>
+                        </div>
+                        <LanguageSwitcher />
                     </div>
-                    <div>
-                        <h1 className="text-3xl font-bold text-white tracking-tight flex items-center gap-2">
-                            BanaNoVa
-                        </h1>
-                        <p className="text-sm text-dark-text-secondary">{t('headerSubtitle')}</p>
+                    <div className="flex justify-center">
+                        <button
+                            onClick={handleChangeApiKey}
+                            className="px-3 py-2 text-xs font-semibold rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 transition-all duration-300"
+                        >
+                            {t('logoutButton') || 'Change API Key'}
+                        </button>
                     </div>
                 </div>
-                <div className="flex items-center gap-4">
-                    <LanguageSwitcher />
-                    <button
-                        onClick={handleChangeApiKey}
-                        className="ml-4 px-4 py-2 text-sm font-semibold rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 transition-all duration-300"
-                    >
-                        {t('logoutButton') || 'Change API Key'}
-                    </button>
+
+                {/* Desktop Layout */}
+                <div className="hidden md:flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                        <div className="relative">
+                            <img src={logoImg} alt="BanaNoVa Logo" className="w-16 h-16 rounded-xl shadow-lg bg-white/80 p-2" />
+                        </div>
+                        <div>
+                            <h1 className="text-3xl font-bold text-white tracking-tight flex items-center gap-2">
+                                BanaNoVa
+                            </h1>
+                            <p className="text-sm text-dark-text-secondary">{t('headerSubtitle')}</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <LanguageSwitcher />
+                        <button
+                            onClick={handleChangeApiKey}
+                            className="ml-4 px-4 py-2 text-sm font-semibold rounded-full bg-red-500 text-white shadow-lg hover:bg-red-600 transition-all duration-300"
+                        >
+                            {t('logoutButton') || 'Change API Key'}
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>

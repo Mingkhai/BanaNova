@@ -2,10 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile optimizations */
+@layer utilities {
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  .tap-highlight-transparent {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Improved mobile scrolling */
+  .smooth-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Mobile-friendly button sizing */
+  .mobile-touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent zoom on input focus on mobile */
+  .prevent-zoom {
+    font-size: 16px;
+  }
+}
+
+/* Animation delays */
 .animation-delay-300 {
   animation-delay: 0.3s;
 }
 
 .animation-delay-600 {
   animation-delay: 0.6s;
+}
+
+/* Mobile responsive text sizing */
+@layer base {
+  html {
+    font-size: 14px;
+  }
+  
+  @screen md {
+    html {
+      font-size: 16px;
+    }
+  }
+}
+
+/* Improve mobile performance */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Mobile-friendly scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A2E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #16213E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6B6B;
 }
